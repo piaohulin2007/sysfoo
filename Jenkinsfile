@@ -9,19 +9,19 @@ pipeline{
   stages{
 
     stage('build'){
-      step{
+      steps{
         sh 'mvn compile'
       }
     }
   
     stage('Maven project test'){
-      step{
+      steps{
         sh 'mvn clean test'
       }
     }
   
     stage('Maven project package'){
-      step{
+      steps{
       	sh 'package -DskipTests'
       }
     }
